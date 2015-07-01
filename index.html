@@ -2,6 +2,11 @@
 layout: default
 ---
 
+{% capture about_content %}
+  {% include 1-welcome.md %}
+{% endcapture %}
+{{ about_content | unindent | markdownify }}
+
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>

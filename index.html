@@ -3,8 +3,12 @@ layout: default
 title: Home
 ---
 
-<div class="home">
-
-  {% image logo.png %}
-
+<div class="home" style="max-width:550px">
+  <div style="float: left; margin: 0px 30px" >
+	{% image logo.png %}
+  </div>
+	{% capture home %}
+	  {% include home/index.md %}
+	{% endcapture %}
+	{{ home | unindent | markdownify }}
 </div>

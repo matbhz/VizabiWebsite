@@ -6,7 +6,7 @@ Install:
 ```
 gem install bundler
 bundle install
-bourbon install -path _assets/stylesheets
+bourbon install --path _assets/stylesheets
 ```
 
 Build:

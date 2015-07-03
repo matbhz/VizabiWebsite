@@ -5,7 +5,7 @@ description: 	Write an awesome description for your new site here. You can edit 
 baseurl: 		""
 url: 			"http://vizabi.org"
 # twitter_username: jekyllrb
-# github_username:  jekyll
+github_username:  matbhz
 
 # Build settings
 markdown: kramdown

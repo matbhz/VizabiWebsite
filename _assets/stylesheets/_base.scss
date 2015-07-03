@@ -83,6 +83,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
+h2 {
+    font-weight: 700;
+    color: lightgrey;
+}
+
 
 
 /**
@@ -201,4 +206,15 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+/**
+ * Custom
+ */
+button {
+    font-family: 'PT Sans'; // TODO: Import from variable
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 5px 5px;
 }

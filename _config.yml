@@ -26,3 +26,5 @@ assets:
   css_compressor: 	sass
 
 exclude: [Gemfile, Gemfile.lock, README.md]
+
+categories: [docs]

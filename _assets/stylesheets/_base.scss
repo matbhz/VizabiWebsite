@@ -64,7 +64,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-    margin-left: $spacing-unit;
+    margin: 20px 40px;
 }
 
 li {
@@ -114,7 +114,7 @@ a {
  */
 blockquote {
     color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    //border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
@@ -217,4 +217,14 @@ button {
     background-color: white;
     border: 1px solid grey;
     padding: 5px 5px;
+}
+
+.docs-menu {
+  position: absolute;
+  left: 150px;
+  background-color: #eeeeff;
+}
+
+.docs-menu li {
+  display: block;
 }

@@ -1,16 +1,29 @@
 ---
 layout: page
-title: Docs
 permalink: /docs/
 ---
 
-{% capture about_content %}
-  {% include docs/1-whatis.md %}
-{% endcapture %}
-{{ about_content | unindent | markdownify }}
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+<div class="docs-menu">
+    <ul>
+    {% for doc in site.posts %}
+        {% if doc.category == "docs" %}
+        <li><a href="#{{ doc.title }}">{{ doc.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</div>
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+<h2>
+    Vizabi documentation
+</h2>
+
+<div class="docs">
+    {% for doc in site.posts %}
+        {% if doc.category == "docs" %}
+            <h1 id="{{ doc.title }}">{{ doc.title }}</h1>
+            {{ doc.content }}
+        {% endif %}
+    {% endfor %}
+</div>

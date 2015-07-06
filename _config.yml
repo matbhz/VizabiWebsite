@@ -28,3 +28,7 @@ assets:
 exclude: [Gemfile, Gemfile.lock, README.md]
 
 categories: [docs]
+
+collections:
+  documentation:
+    output: true

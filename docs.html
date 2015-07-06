@@ -6,18 +6,16 @@ permalink: /docs/
 
 <div class="docs-menu">
     <ul>
-    {% for doc in site.categories['docs'] reversed %}
+    {% for doc in site.documentation %}
         <li><a href="#{{ doc.title }}">{{ doc.title }}</a></li>
     {% endfor %}
     </ul>
 </div>
 
-<h2>
-    Vizabi documentation
-</h2>
+<h2>Vizabi documentation</h2>
 
 <div class="docs">
-    {% for doc in site.categories['docs'] reversed %}
+    {% for doc in site.documentation %}
             <h1 id="{{ doc.title }}">{{ doc.title }}</h1>
             {{ doc.content }}
     {% endfor %}

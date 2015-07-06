@@ -6,10 +6,8 @@ permalink: /docs/
 
 <div class="docs-menu">
     <ul>
-    {% for doc in site.posts reversed %}
-        {% if doc.category == "docs" %}
+    {% for doc in site.categories['docs'] reversed %}
         <li><a href="#{{ doc.title }}">{{ doc.title }}</a></li>
-        {% endif %}
     {% endfor %}
     </ul>
 </div>
@@ -19,10 +17,8 @@ permalink: /docs/
 </h2>
 
 <div class="docs">
-    {% for doc in site.posts reversed %}
-        {% if doc.category == "docs" %}
+    {% for doc in site.categories['docs'] reversed %}
             <h1 id="{{ doc.title }}">{{ doc.title }}</h1>
             {{ doc.content }}
-        {% endif %}
     {% endfor %}
 </div>

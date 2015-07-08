@@ -6,12 +6,13 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
+$text-color:       #374850;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
+$grey-color-lightest: lighten($grey-color, 45%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
@@ -28,7 +29,10 @@ $on-laptop:        900px;
 
 @import
         "bourbon/bourbon",
+        "mixins",
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "header",
+        "docs"
 ;

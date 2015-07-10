@@ -1,10 +1,7 @@
 ---
-layout: post
-title: "What is Vizabi?"
-category: docs
+title: What is Vizabi?
+slug: 
 ---
-
-
 
 > Gapminder Vizabi is our framework for developing visual exploration tools that with support for mobile devices, responsiveness, localization, embedding support and unified data schema.
 

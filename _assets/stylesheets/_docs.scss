@@ -1,9 +1,31 @@
 .docs-menu {
-  position: absolute;
-  left: 150px;
-  background-color: #eeeeff;
+	@include border-radius(3px);
+	list-style: none;
+	display: block;
+    width: 215px;
+    float: left;
+    margin: 0px;
+    padding: 30px;
+    background-color: #F7F7F7;
+    font-size: 17px;
+    line-height: 2;
+    &> li {
+    	list-style: none;
+        &> a {
+            display: block;
+            color: #666666;
+        }
+    }
+
+    @include breakpoint(not-large) {
+		display: none;
+    }
 }
 
-.docs-menu li {
-  display: block;
+.docs-content {
+    margin-left: 320px;
+
+    @include breakpoint(not-large) {
+		margin-left: 0px;
+	}
 }

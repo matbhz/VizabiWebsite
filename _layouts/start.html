@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="{{ page.body_class }}">
+    {% javascript main %}
+
+    {% include header.html %}
+
+    <!-- INCLUDE VIZABI BEFORE CONTENT (JUST FOR EXAMPLE PURPOSES) -->
+    <!-- D3 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+
+    <!-- VIZABI -->
+    <link rel="stylesheet" href="http://static.gapminderdev.org/vizabi/{{ site.vizabi_version }}/dist/vizabi.css">
+    <script type="text/javascript" src="http://static.gapminderdev.org/vizabi/{{ site.vizabi_version }}/dist/vizabi.min.js"></script>
+
+  
+    <div class="start-splash" id="home-splash">
+      <div class="start-splash-bubbles" id="start-splash-bubbles"></div>
+      <div class="start-splash-content">
+        <p class="logo">{% image logo-white.png %}</p>
+        <h1>Framework for developing embeddable visual exploration tools.</h1>
+        <h2>You can freely use Vizabi to embed our tools or extend it to create a new vizualization</h2>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.4/p5.js"></script>
+    {% javascript splash %}
+
+
+  </body>
+
+</html>

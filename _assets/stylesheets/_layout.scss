@@ -98,7 +98,47 @@
     font-size: 24px;
 }
 
+//HOME
 
+.start-splash {
+    height: $splash-height;
+    display: block;
+    background-color: $brand-color;
+    @include position(relative);
+    
+    h1 {
+        font-size: 44px;
+        line-height: 1.2;
+        color: white;
+    }
+
+    h2 {
+        font-size: 19px;
+        color: $brand-color-dark;
+    }
+    
+    .logo {
+        margin-bottom: 50px;
+    }
+
+    .start-splash-bubbles {
+        height: $splash-height;
+        background-color: $brand-color;
+
+        canvas {
+            opacity: 0.05;
+            -webkit-filter: blur(5px);
+        }
+    }
+
+    .start-splash-content {
+        text-align: center;
+        $w: 700px;
+        width: $w;
+        margin-left: -1 * $w / 2;
+        @include position(absolute, 80px null null 50%);
+    }
+}
 
 /**
  * Posts

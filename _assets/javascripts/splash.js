@@ -46,7 +46,7 @@ var sketch = function(s) {
         s.translate((x + s.frameCount) % s.width, y % s.height);
         s.rotate(rotation);
         s.fill('rgba(255, 255, 255, 1)');
-        if (s.random(1) > .4) s.fill('rgba(55,55,55, 1)');
+        if (s.random(1) > .7) s.fill('rgba(55,55,55, 1)');
         if (s.random(1) > .8) s.fill('rgba(0, 0, 0, 1)');
         s.ellipse(0, -time * s.height + s.height, sz, sz);
         s.ellipse(0, -time * s.height, sz, sz);

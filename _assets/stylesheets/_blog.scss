@@ -1,0 +1,19 @@
+.blog {
+    .page-content .wrapper {
+        max-width: -webkit-calc(#{$blog-width} - (#{$spacing-unit} * 2));
+        max-width:         calc(#{$blog-width} - (#{$spacing-unit} * 2));
+    }
+
+    .post-title > a {
+        color: $grey-color;
+    }
+
+    .site-header {
+        border-bottom: 0px;
+    }
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 30px;
+}

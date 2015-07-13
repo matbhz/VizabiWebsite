@@ -79,13 +79,52 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 300;
+}
+
+h1 {
+    font-weight: 700;
+    color: #666666;
+    font-size: 36px;
 }
 
 h2 {
     font-weight: 700;
     color: lightgrey;
+    color: #666666;
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    color: #777777;
+    background-color: inherit;
+    font-size: 14px;
+}
+
+hr {
+    height: 0.2em;
+    border: 0;
+    color: #CCCCCC;
+    background-color: #CCCCCC;
 }
 
 
@@ -102,7 +141,7 @@ a {
     }
 
     &:hover {
-        color: $text-color;
+        color: darken($brand-color, 15%);
         text-decoration: underline;
     }
 }
@@ -132,10 +171,7 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    font-size: 14px;
 }
 
 code {
@@ -175,6 +211,60 @@ pre {
     }
 }
 
+.button {
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  min-width: 32px;
+  height: 29px;
+  padding: 0px 10px;
+  font-size: 12px;
+  color: white !important;
+  text-align: center;
+  background: rgb(102, 102, 102);
+  border: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:active {
+  background: rgb(175, 195, 78);
+  outline: none;
+}
+
+.button:hover {
+  background: rgb(85, 85, 85);
+  outline: none;
+}
+
+.button.large {
+  font-size: 1.6em;
+  height: 54px;
+  line-height: 54px;
+  padding: 8px 20px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.code-btn {
+  position: absolute;
+  right: 5px;
+  z-index: 10;
+  top: 11px;
+  padding-top: 10px;
+}
 
 
 /**

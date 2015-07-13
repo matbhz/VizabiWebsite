@@ -8,7 +8,7 @@ $spacing-unit:     30px;
 
 $text-color:       #374850;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #58A1CE;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -34,5 +34,6 @@ $on-laptop:        1200px;
         "layout",
         "syntax-highlighting",
         "header",
+        "vizabi",
         "docs"
 ;

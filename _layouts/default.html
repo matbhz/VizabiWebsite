@@ -4,8 +4,17 @@
   {% include head.html %}
 
   <body>
+    {% javascript main %}
 
     {% include header.html %}
+
+    <!-- INCLUDE VIZABI BEFORE CONTENT (JUST FOR EXAMPLE PURPOSES) -->
+    <!-- D3 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+
+    <!-- VIZABI -->
+    <link rel="stylesheet" href="http://static.gapminderdev.org/vizabi/{{ site.vizabi_version }}/dist/vizabi.css">
+    <script type="text/javascript" src="http://static.gapminderdev.org/vizabi/{{ site.vizabi_version }}/dist/vizabi.min.js"></script>
 
     <div class="page-content">
       <div class="wrapper">
@@ -14,6 +23,7 @@
     </div>
 
     {% include footer.html %}
+
 
   </body>
 

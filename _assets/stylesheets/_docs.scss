@@ -28,4 +28,42 @@
     @include breakpoint(not-large) {
 		margin-left: 0px;
 	}
+
+	h1 {
+		font-weight: bold;
+	}
+}
+
+.docs-article {
+	h1 {
+	  margin-left: -32px;
+	  padding-left: 32px;
+	  padding-top: 40px;
+	}
+
+	h1, p {
+	  position: relative;
+	}
+
+	h1 .link {
+	  display: none;
+	  @include position(absolute, 40px null null 0);
+	  width: 33px;
+	  color: #CCCCCC;
+	  font-size: 27px;
+	  line-height: 54px;
+	}
+
+	h1:hover .link {
+	  display: block;
+	}
+
+	h1 .link:active {
+	  color:  #afc256;
+	}
+}
+
+.docs-page-title {
+	color: #cccccc;
+	font-size: 24px;
 }

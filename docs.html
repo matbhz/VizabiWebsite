@@ -1,5 +1,5 @@
 ---
-layout: docPage
+layout: default
 title: Docs
 permalink: /docs/
 ---
@@ -12,7 +12,7 @@ permalink: /docs/
 
 <div class="docs-content">
 
-	<h2>Vizabi documentation</h2>
+	<h2 class="docs-page-title">Vizabi documentation</h2>
 
 	<div class="docs">
 	    {% for doc in site.documentation %}
@@ -24,3 +24,5 @@ permalink: /docs/
 	</div>
 
 </div>
+
+{% javascript sticky-sidebar %}

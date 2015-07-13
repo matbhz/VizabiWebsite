@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Line Chart"
-category: docs
+slug: line-chart
 ---
 
 Lorem ipsum dolor

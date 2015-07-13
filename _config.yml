@@ -25,6 +25,8 @@ vizabi_version:		develop
 menu:
   - title: Home
     url: /
+  - title: Examples
+    url: /examples/
   - title: Docs
     url: /docs/
   - title: Blog
@@ -40,4 +42,6 @@ categories: [docs]
 
 collections:
   documentation:
+    output: false
+  examples:
     output: true

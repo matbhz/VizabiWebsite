@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<ul class="docs-menu">
+    {% for doc in site.examples %}
+        <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<div class="docs-content">
+
+	<h2 class="docs-page-title">Vizabi examples</h2>
+
+	<div class="docs">
+	    <article id="{{ doc.slug }}" class='docs-article'>
+        	{{ content }}
+	    </article>
+	</div>
+
+</div>
+
+{% javascript sticky-sidebar %}

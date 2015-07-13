@@ -22,8 +22,6 @@ body_class: blog
     <hr />
 {% endfor %}
 
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 <div class="pagination">
 
     {% if paginator.total_pages > 1 %}
@@ -38,3 +36,5 @@ body_class: blog
     </p>
     {% endif %}
 </div>
+
+<p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe via RSS</a></p>

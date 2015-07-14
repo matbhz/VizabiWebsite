@@ -1,0 +1,269 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+.cd-embeddable {
+    *, *::after, *::before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.cd-img-replace {
+    /* replace text with background images */
+    
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+$width-embeddable: 350px;
+$height-embeddable: 600px;
+
+@media only screen and (min-width: 1170px) {
+    .cd-product-mockup {
+        width: 90%;
+        /* set here the max-width for the mockup */
+        
+        max-width: $width-embeddable;
+        margin: 0 auto 50px;
+        position: relative;
+    }
+    .cd-product-mockup .cd-front {
+        display: block;
+        position: relative;
+        width: $width-embeddable;
+        height: $height-embeddable;
+        /* Firefox bug - 3D CSS transform, jagged edges */
+        
+        outline: 1px solid transparent;
+    }
+
+    .cd-front {
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .is-product-tour .cd-front {
+      cursor: default;
+    }
+
+    .cd-product-mockup {
+        margin-bottom: 0;
+        /* Force Hardware Acceleration in WebKit */
+        
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform-origin: center top;
+        -moz-transform-origin: center top;
+        -ms-transform-origin: center top;
+        -o-transform-origin: center top;
+        transform-origin: center top;
+
+        @include prefixer(transform, rotateX(-60deg) rotateZ(-40deg) translateX(30px) translateY(200px), webkit moz ms o spec);
+        -webkit-transition: -webkit-transform 0.6s;
+        -moz-transition: -moz-transform 0.6s;
+        transition: transform 0.6s;
+    }
+    .cd-product-mockup::before {
+        /* mockup shadow */
+        
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        /* play with these values to create a realistic shadow */
+        
+        height: 45%;
+        box-shadow: 0px 0px 30px 180px rgba(0, 0, 0, 0.1);
+
+         @include prefixer(transform, translateZ(-70px) translateY(390px), webkit moz ms o spec);
+
+        -webkit-transition: -webkit-transform 0.6s;
+        -moz-transition: -moz-transform 0.6s;
+        transition: transform 0.6s;
+    }
+    .is-product-tour .cd-product-mockup {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .is-product-tour .cd-product-mockup::before {
+        -webkit-transform: translateZ(-100px) translateX(226px) translateY(216px);
+        -moz-transform: translateZ(-100px) translateX(226px) translateY(216px);
+        -ms-transform: translateZ(-100px) translateX(226px) translateY(216px);
+        -o-transform: translateZ(-100px) translateX(226px) translateY(216px);
+        transform: translateZ(-100px) translateX(226px) translateY(216px);
+    }
+}
+
+.no-csstransforms3d .cd-product:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.no-csstransforms3d .cd-product-mockup {
+    float: right;
+}
+
+.no-csstransforms3d .cd-product-mockup::before {
+    display: none;
+}
+
+.cd-3d-right-side,
+.cd-3d-bottom-side {
+    background-color: #ffffff;
+    display: none;
+}
+
+@media only screen and (min-width: 1170px) {
+    .cd-3d-right-side,
+    .cd-3d-bottom-side {
+        display: block;
+        position: absolute;
+        left: 0;
+        /* Firefox bug - 3D CSS transform, jagged edges */
+        
+        outline: 1px solid transparent;
+    }
+    .cd-3d-right-side::after,
+    .cd-3d-bottom-side::after {
+        /* darken the right/bottom sides */
+        
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .cd-3d-right-side {
+        top: -1px;
+        width: 10px;
+        height: 100%;
+        background-size: auto 100%;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -ms-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+        -webkit-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+        -moz-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+        -ms-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+        -o-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+        transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+    }
+    .cd-3d-bottom-side {
+        bottom: 0;
+        width: $width-embeddable;
+        height: 10px;
+        background-position: bottom center;
+        background-size: 100% auto;
+        -webkit-transform-origin: center bottom;
+        -moz-transform-origin: center bottom;
+        -ms-transform-origin: center bottom;
+        -o-transform-origin: center bottom;
+        transform-origin: center bottom;
+        -webkit-transform: translateZ(-1px) rotateX(-90deg);
+        -moz-transform: translateZ(-1px) rotateX(-90deg);
+        -ms-transform: translateZ(-1px) rotateX(-90deg);
+        -o-transform: translateZ(-1px) rotateX(-90deg);
+        transform: translateZ(-1px) rotateX(-90deg);
+    }
+    .cd-3d-bottom-side::after {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+.no-csstransforms3d .cd-3d-right-side,
+.no-csstransforms3d .cd-3d-bottom-side {
+    display: none;
+}
+
+.cd-close-product-tour {
+    /* close icon - product tour */
+    
+    display: none;
+}
+
+@media only screen and (min-width: 1170px) {
+    .cd-close-product-tour {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: -80px;
+        height: 40px;
+        width: 40px;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 0.6s;
+        -moz-transition: opacity 0.6s;
+        transition: opacity 0.6s;
+    }
+    .no-touch .cd-close-product-tour:hover {
+        opacity: .8;
+    }
+    .cd-close-product-tour::after,
+    .cd-close-product-tour::before {
+        /* these are used to create the 'X' icon */
+        
+        content: '';
+        height: 40px;
+        width: 2px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-color: $brand-color-dark;
+    }
+    .cd-close-product-tour::after {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+    .cd-close-product-tour::before {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+    .cd-close-product-tour.is-visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .is-product-tour .cd-close-product-tour{
+        visibility: visible;
+        opacity: 1;
+    }
+}

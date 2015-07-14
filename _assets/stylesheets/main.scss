@@ -11,7 +11,7 @@ $background-color: #fdfdfd;
 $brand-color:      #58A1CE;
 $brand-color-dark: #3C4F5E;
 
-$splash-height: 720px;
+$splash-height: 520px;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -41,5 +41,6 @@ $on-laptop:        1200px;
         "header",
         "vizabi",
         "docs",
-        "blog"
+        "blog",
+        "embeddable"
 ;

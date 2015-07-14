@@ -4,8 +4,12 @@
         max-width:         calc(#{$blog-width} - (#{$spacing-unit} * 2));
     }
 
-    .post-title > a {
-        color: $grey-color;
+    .post-title {
+        padding-top: 30px;
+
+        & > a {
+            color: $grey-color;
+        }
     }
 
     .site-header {

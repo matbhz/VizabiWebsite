@@ -6,9 +6,10 @@
 
     .post-title {
         padding-top: 30px;
+        color: $brand-color-dark;
 
         & > a {
-            color: $grey-color;
+            color: $brand-color-dark;
         }
     }
 

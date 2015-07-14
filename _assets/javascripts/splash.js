@@ -10,16 +10,16 @@ var sketch = function(s) {
         num2 = 50;
     var rs;
 
-    s.setup = function () {
+    s.setup = function() {
         s.createCanvas(container_width, container_height);
         s.smooth(8);
         s.noStroke();
         rs = s.random(10000);
 
-        window.onresize = function() { 
-          container_width = container.offsetWidth;
-          container_height = container.offsetHeight;
-          s.createCanvas(container_width, container_height);
+        window.onresize = function() {
+            container_width = container.offsetWidth;
+            container_height = container.offsetHeight;
+            s.createCanvas(container_width, container_height);
         }
     }
 
@@ -55,29 +55,40 @@ var sketch = function(s) {
 
 };
 
-var bubbles = new p5(sketch,'start-splash-bubbles');
+var bubbles = new p5(sketch, 'start-splash-bubbles');
 
 
 var viz = Vizabi('BubbleChart', document.getElementById('embeddable-container'), {
+    state: {
+        time: {
+            start: '1900'
+        }
+    },
     data: {
         reader: 'csv-file',
         path: 'https://dl.dropboxusercontent.com/u/4933279/csv/basic-indicators.csv'
     },
     bind: {
-      ready: function() {
-        viz.setOptions({ state: { time: { playing: true } } });
-      }
+        ready: function() {
+            viz.setOptions({
+                state: {
+                    time: {
+                        playing: true
+                    }
+                }
+            });
+        }
     }
 });
 
 var embeddable = document.getElementById('embeddable-container');
 var close_btn = document.getElementById('close-embeddable');
 embeddable.addEventListener('click', function(e) {
-  addClass(document.body, 'is-product-tour');
+    addClass(document.body, 'is-product-tour');
 });
 
 close_btn.addEventListener('click', function(e) {
-  console.log('test');
-  removeClass(document.body, 'is-product-tour');
-  e.preventDefault();
+    console.log('test');
+    removeClass(document.body, 'is-product-tour');
+    e.preventDefault();
 });

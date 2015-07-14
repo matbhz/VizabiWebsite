@@ -1,14 +1,31 @@
 ---
 layout: start
 title: Home
+
+features:
+  - title: "Feature 1"
+    image: "some-image.png"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis, inventore porro quas sunt! Maxime doloremque repellendus voluptas facere sed, asperiores cumque similique consequuntur nulla quos dolor placeat laudantium reprehenderit."
+  - title: "Feature 2"
+    image: "some-image.png"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis, inventore porro quas sunt! Maxime doloremque repellendus voluptas facere sed, asperiores cumque similique consequuntur nulla quos dolor placeat laudantium reprehenderit."
+  - title: "Feature 3"
+    image: "some-image.png"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis, inventore porro quas sunt! Maxime doloremque repellendus voluptas facere sed, asperiores cumque similique consequuntur nulla quos dolor placeat laudantium reprehenderit."
+  - title: "Feature 4"
+    image: "some-image.png"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis, inventore porro quas sunt! Maxime doloremque repellendus voluptas facere sed, asperiores cumque similique consequuntur nulla quos dolor placeat laudantium reprehenderit."
+
+  - title: "Feature 5"
+    image: "some-image.png"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis, inventore porro quas sunt! Maxime doloremque repellendus voluptas facere sed, asperiores cumque similique consequuntur nulla quos dolor placeat laudantium reprehenderit."
 ---
 
-<div class="home" style="max-width:550px">
-  <div style="float: left; margin: 0px 30px" >
-	{% image logo.png %}
-  </div>
-	{% capture home %}
-	  {% include home/index.md %}
-	{% endcapture %}
-	{{ home | unindent | markdownify }}
+<div class="home">
+    {% for f in page.features %}
+    <section class="feature">
+        <h2 class="feature-title">{{ f.title }}</h2>
+        <p class="feature-description">{{ f.description }}</p>
+    </section>
+    {% endfor %}
 </div>
